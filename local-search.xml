@@ -4,13 +4,19 @@
   
   
   <entry>
-    <title>Hello World</title>
-    <link href="/2025/03/01/hello-world/"/>
-    <url>/2025/03/01/hello-world/</url>
+    <title>电费水费燃气费暖气费物业费</title>
+    <link href="/2025/03/01/price/"/>
+    <url>/2025/03/01/price/</url>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="居民电费"><a href="#居民电费" class="headerlink" title="居民电费"></a>居民电费</h3><table><thead><tr><th>阶梯</th><th>区间</th><th>价格</th></tr></thead><tbody><tr><td>第一档</td><td>每户每月用电180度以下</td><td>0.56元&#x2F;度</td></tr><tr><td>第二档</td><td>每户每月用电180～260度,电价提高0.05元&#x2F;度</td><td>0.61元&#x2F;度</td></tr><tr><td>第三档</td><td>每户每月用电260度以上,电价提高0.30元&#x2F;度</td><td>0.86元&#x2F;度</td></tr></tbody></table><hr><h3 id="居民生活用水水费"><a href="#居民生活用水水费" class="headerlink" title="居民生活用水水费"></a>居民生活用水水费</h3><table><thead><tr><th>阶梯</th><th>区间</th><th>价格</th></tr></thead><tbody><tr><td>第一档</td><td>年用水量在180立方米及以下</td><td>4.4元&#x2F;立方米</td></tr><tr><td>第二档</td><td>年用水量在181至260立方米之间</td><td>5.95元‌&#x2F;立方米</td></tr><tr><td>第三档</td><td>年用水量超过260立方米</td><td>10.6元‌&#x2F;立方米</td></tr></tbody></table><hr><h3 id="居民管道天然气费"><a href="#居民管道天然气费" class="headerlink" title="居民管道天然气费"></a>居民管道天然气费</h3><table><thead><tr><th>阶梯</th><th>区间</th><th>价格</th></tr></thead><tbody><tr><td>第一档</td><td>每户每月用气量50立方米及以下</td><td>2.94元&#x2F;立方米</td></tr><tr><td>第二档</td><td>每户每月用气量50立方米以上</td><td>3.82元&#x2F;立方米</td></tr></tbody></table><hr><h3 id="暖气费"><a href="#暖气费" class="headerlink" title="暖气费"></a>暖气费</h3><p>按照套内面积 0.19元&#x2F;㎡•日,先缴费后供暖.<br>采暖季通常为:11月15日至3月15日4个月.<br>举例:套内面积72㎡,当年采暖季共120天,总共采暖费用为:<br>0.19 * 72 * 120 &#x3D; 1641.6元</p><hr><h3 id="物业费"><a href="#物业费" class="headerlink" title="物业费"></a>物业费</h3><p>按照建筑面积,2.98元&#x2F;平 每月.<br>举例:建筑面积97平,当年物业费为:<br>2.98 * 97 * 12 &#x3D; 3468.72元</p><hr>    <div class="fold">      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-f91001fb" role="button" aria-expanded="false" aria-controls="collapse-f91001fb">        <div class="fold-arrow">▶</div>文章封面      </div>      <div class="fold-collapse collapse" id="collapse-f91001fb">        <div class="fold-content">          <p><img src="/img/street.png"></p>        </div>      </div>    </div>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>生活</tag>
+      
+    </tags>
     
   </entry>
   
