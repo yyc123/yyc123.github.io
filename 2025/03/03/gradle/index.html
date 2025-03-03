@@ -21,27 +21,28 @@
   <meta name="author" content="yueyc">
   <meta name="keywords" content="">
   
-    <meta name="description" content="转眼人生已过32载，马上步入中年了，诚惶诚恐。过去这一年多来，家中发生了很多变故，内心从未如此焦虑。   或许一切都是因买房而起吧，一套不足百平米的房子，给我的家庭带来了巨额的债务，近几年的生活都过的紧巴巴的。而今面临经济大环境的寒气，公司的业绩也持续下滑，面临裁员降薪的风险。而我在此刻，还背负着为我的岳父以我的名义贷了近一百万的贷款，我不知道一个普通人在如此境况下该有怎样的心境,而他，还赔的精光">
+    <meta name="description" content="flutter旧项目升级Gradle版本今天运行一个flutter旧版本(2.8.1)项目,报错跑不起来:exception in phase ‘semantic analysis‘ in source unit ‘_BuildScript_‘ Unsupported class file major version 61      意思是说,开发工具的java版本太高了,而项目配置的Gradle">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一篇博客---懂人情，知冷暖。">
-<meta property="og:url" content="https://yueyc.top/2025/02/27/first-blog/index.html">
+<meta property="og:title" content="gradle与AGP的关系">
+<meta property="og:url" content="https://yueyc.top/2025/03/03/gradle/index.html">
 <meta property="og:site_name" content="淡然处之的博客">
-<meta property="og:description" content="转眼人生已过32载，马上步入中年了，诚惶诚恐。过去这一年多来，家中发生了很多变故，内心从未如此焦虑。   或许一切都是因买房而起吧，一套不足百平米的房子，给我的家庭带来了巨额的债务，近几年的生活都过的紧巴巴的。而今面临经济大环境的寒气，公司的业绩也持续下滑，面临裁员降薪的风险。而我在此刻，还背负着为我的岳父以我的名义贷了近一百万的贷款，我不知道一个普通人在如此境况下该有怎样的心境,而他，还赔的精光">
+<meta property="og:description" content="flutter旧项目升级Gradle版本今天运行一个flutter旧版本(2.8.1)项目,报错跑不起来:exception in phase ‘semantic analysis‘ in source unit ‘_BuildScript_‘ Unsupported class file major version 61      意思是说,开发工具的java版本太高了,而项目配置的Gradle">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://yueyc.top/img/first.png">
-<meta property="article:published_time" content="2025-02-27T03:38:52.000Z">
-<meta property="article:modified_time" content="2025-03-03T02:16:11.770Z">
+<meta property="og:image" content="https://cdn.yueyc.top/img/20250303174155656.png">
+<meta property="article:published_time" content="2025-03-03T02:19:00.000Z">
+<meta property="article:modified_time" content="2025-03-03T10:42:27.738Z">
 <meta property="article:author" content="yueyc">
-<meta property="article:tag" content="心情">
-<meta property="article:tag" content="flag">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="Gradle">
+<meta property="article:tag" content="flutter">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://yueyc.top/img/first.png">
+<meta name="twitter:image" content="https://cdn.yueyc.top/img/20250303174155656.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>第一篇博客---懂人情，知冷暖。 - 淡然处之的博客</title>
+  <title>gradle与AGP的关系 - 淡然处之的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -201,13 +202,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/first.png') no-repeat center center; background-size: cover;">
+     style="background: url('https://cdn.yueyc.top/img/20250303174155656.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="第一篇博客---懂人情，知冷暖。"></span>
+            <span id="subtitle" data-typed-text="gradle与AGP的关系"></span>
           
         </div>
 
@@ -218,8 +219,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-02-27 11:38" pubdate>
-          2025年2月27日 中午
+        <time datetime="2025-03-03 10:19" pubdate>
+          2025年3月3日 上午
         </time>
       </span>
     
@@ -230,7 +231,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          690 字
+          884 字
         
       </span>
     
@@ -241,7 +242,7 @@
         
         
         
-          6 分钟
+          8 分钟
         
       </span>
     
@@ -287,31 +288,267 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">第一篇博客---懂人情，知冷暖。</h1>
+            <h1 id="seo-header">gradle与AGP的关系</h1>
             
             
               <div class="markdown-body">
                 
-                <p>转眼人生已过32载，马上步入中年了，诚惶诚恐。过去这一年多来，家中发生了很多变故，内心从未如此焦虑。  </p>
-<p>或许一切都是因买房而起吧，一套不足百平米的房子，给我的家庭带来了巨额的债务，近几年的生活都过的紧巴巴的。而今面临经济大环境的寒气，公司的业绩也持续下滑，面临裁员降薪的风险。而我在此刻，还背负着为我的岳父以我的名义贷了近一百万的贷款，我不知道一个普通人在如此境况下该有怎样的心境,而他，还赔的精光。如此，该怎样去面对，如何去承受？我不知道!我只能对自己说，面对吧，总有人你比更惨，除了正常渡过每一天，我还能怎样呢？  </p>
-<div class="note note-info">
-            <p><strong>——淡然处之</strong>。    </p>
-          </div>
-<p>失眠，至少在30岁之前我的人生词典根本就不存在。现在经常彻夜难眠。每天睁开眼睛，想的就是怎样赚钱，怎样搞副业，怎样暴富。作为一个从业10年的程序员，我的性格又是那么谨小慎微，没有冒风险的精神。压抑的很！甚至开始反思，婚姻给我带来了什么。以前常有朋友调侃:”人生赢家啊,有车有房有老婆孩子!” 到现在我深深的体会到,拥有这些东西的背后,是多么沉重的责任，到今天都已经压得我快要窒息。今年春节期间，对未婚的朋友说，我真羡慕你未婚。他不理解我羡慕他什么。他比我年纪还大一岁，肯定也很焦虑，但我们的焦虑无法共鸣。我不想把焦虑的情绪带给家人，朋友。越是经历情绪的低谷，越是<strong>懂人情，知冷暖</strong>。我想给身边人展示一个积极乐观的自我，奋斗向上的自我😄。  </p>
-<p>回头望，全是负能量。  </p>
-<p>最近互联网上流传一句话——“债务不是手段，而是目的。”是的，这个社会机器滚滚向前，为了不让我躺平，给我设置了巨额的债务关卡。但我要改变自己，想办法去突破，提升自己！ </p>
-<p><strong>我不知道写这个博客是否有人会看。我打算把日常一些所见所感记录下来，也规划一下自己，只当是给自己的碎片记录整理，或者心灵的倾诉吧！</strong>  </p>
-<h2 id="这开篇，就先给自己立下3个flag"><a href="#这开篇，就先给自己立下3个flag" class="headerlink" title="这开篇，就先给自己立下3个flag:"></a>这开篇，就先给自己立下3个flag:</h2><div class="note note-info">
-            <p><strong>1. 减肥到155斤；</strong>  </p><p><strong>2. 掌握JS以及相关领域的常用框架；</strong>  </p><p><strong>3. 年底不要被迫卖房。</strong></p>
-          </div>
+                <h3 id="flutter旧项目升级Gradle版本"><a href="#flutter旧项目升级Gradle版本" class="headerlink" title="flutter旧项目升级Gradle版本"></a>flutter旧项目升级Gradle版本</h3><p>今天运行一个flutter旧版本(2.8.1)项目,报错跑不起来:<br><code>exception in phase ‘semantic analysis‘ in source unit ‘_BuildScript_‘ Unsupported class file major version 61</code>  </p>
+<p><img src="https://cdn.yueyc.top/img/20250303172719102.png" srcset="/img/loading.gif" lazyload>  </p>
+<p>意思是说,开发工具的java版本太高了,而项目配置的Gradle版本(这里是6.7)不支持这个Java版本.<br>查看本机配置的java版本:</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs applescript">java -<span class="hljs-built_in">version</span><br></code></pre></td></tr></table></figure>
+<p>输出:</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">openjdk</span> version <span class="hljs-string">&quot;17.0.10&quot;</span> <span class="hljs-number">2024</span>-<span class="hljs-number">01</span>-<span class="hljs-number">16</span><br><span class="hljs-attribute">OpenJDK</span> Runtime Environment (build <span class="hljs-number">17</span>.<span class="hljs-number">0</span>.<span class="hljs-number">10</span>+<span class="hljs-number">0</span>-<span class="hljs-number">17</span>.<span class="hljs-number">0</span>.<span class="hljs-number">10</span>b1087.<span class="hljs-number">21</span>-<span class="hljs-number">11572160</span>)<br><span class="hljs-attribute">OpenJDK</span> <span class="hljs-number">64</span>-Bit Server VM (build <span class="hljs-number">17</span>.<span class="hljs-number">0</span>.<span class="hljs-number">10</span>+<span class="hljs-number">0</span>-<span class="hljs-number">17</span>.<span class="hljs-number">0</span>.<span class="hljs-number">10</span>b1087.<span class="hljs-number">21</span>-<span class="hljs-number">11572160</span>, mixed mode)<br></code></pre></td></tr></table></figure>
+<p>发现Java版本是17,而Gradle6.7要求Java版本是11以下,所以要么<strong>Gradle版本升级</strong>,要么<strong>降低Java版本</strong>到11.<br>这里选择升级Gradle版本到7.3.3,在android&#x2F;gradle&#x2F;wrapper&#x2F;gradle-wrapper.properties文件中找到distributionUrl这一行，修改:</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">distributionUrl</span>=https\://services.gradle.org/distributions/gradle-<span class="hljs-number">7</span>.<span class="hljs-number">3</span>.<span class="hljs-number">3</span>-<span class="hljs-literal">all</span>.zip<br></code></pre></td></tr></table></figure>
+<p>同时修改在android&#x2F;build.gradle文件中的gradleVersion为7.2.0:</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs gradle"><span class="hljs-keyword">buildscript</span> &#123;<br>    ext.kotlin_version = <span class="hljs-string">&#x27;1.5.31&#x27;</span><br>    <span class="hljs-keyword">repositories</span> &#123;<br>        google()<br>        jcenter()<br>    &#125;<br>    <span class="hljs-keyword">dependencies</span> &#123;<br>        <span class="hljs-keyword">classpath</span> <span class="hljs-string">&#x27;com.android.tools.build:gradle:7.2.0&#x27;</span><br>        <span class="hljs-keyword">classpath</span> <span class="hljs-string">&quot;org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version&quot;</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<hr>
+<p>注意两者路径不要搞混:  </p>
+<ul>
+<li>Gradle配置路径:<strong>android&#x2F;gradle&#x2F;wrapper&#x2F;gradle-wrapper.properties</strong>  </li>
+<li>Gradle插件配置路径:<strong>android&#x2F;build.gradle</strong></li>
+</ul>
+<hr>
+<p>修改完之后:<br><img src="https://cdn.yueyc.top/img/20250303173408361.png" srcset="/img/loading.gif" lazyload>  </p>
+<p>运行,新的报错:<code>The option &#39;android.jetifier.blacklist&#39; is deprecated.   </code>  </p>
+<p><img src="https://cdn.yueyc.top/img/20250303173531697.png" srcset="/img/loading.gif" lazyload>  </p>
+<p>解决办法:<br><img src="https://cdn.yueyc.top/img/20250303173725271.png" srcset="/img/loading.gif" lazyload><br>最后,修改compileSdkVersion和targetSdkVersion版本为<strong>32</strong></p>
+<h3 id="compileSdkVersion和targetSdkVersion区别"><a href="#compileSdkVersion和targetSdkVersion区别" class="headerlink" title="compileSdkVersion和targetSdkVersion区别:"></a>compileSdkVersion和targetSdkVersion区别:</h3><ul>
+<li>compileSdkVersion:编译SDK版本,编译时使用的SDK版本,一般情况下,编译时使用的SDK版本应当和targetSdkVersion保持一致.</li>
+<li>targetSdkVersion:目标SDK版本,运行时使用的SDK版本,一般情况下,应当选择最新的SDK版本,以获得最新的特性和安全更新.</li>
+</ul>
+<h3 id="什么是Gradle"><a href="#什么是Gradle" class="headerlink" title="什么是Gradle?"></a>什么是Gradle?</h3><p>Gradle是一个自动化构建工具，它可以自动执行各种任务，例如编译，测试，打包，发布，依赖管理等。Gradle基于Groovy语言，支持多种语言，包括Java，Groovy，Kotlin，Scala等。  </p>
+<p>在使用 Gradle 时，通常需要使用 Java Development Kit (JDK) 来编译、运行和测试你的项目。  </p>
+<h3 id="什么是Android-Gradle-Plugin-AGP"><a href="#什么是Android-Gradle-Plugin-AGP" class="headerlink" title="什么是Android Gradle Plugin (AGP)?"></a>什么是Android Gradle Plugin (AGP)?</h3><p>Android Gradle Plugin (AGP) 是 Gradle 的一部分，它是 Android 项目的构建系统，负责编译，打包，测试，签名和发布 Android 应用。AGP 基于 Gradle，并提供一系列插件来支持 Android 开发。  </p>
+<p>不做安卓原生开发,不了解这些配置的对应关系,通过搜索,查看官网(<a target="_blank" rel="noopener" href="https://developer.android.com/build/releases/gradle-plugin?hl=zh-cn),%E6%89%BE%E5%88%B0%E5%A6%82%E4%B8%8B%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB">https://developer.android.com/build/releases/gradle-plugin?hl=zh-cn),找到如下对应关系</a>:</p>
+<table>
+<thead>
+<tr>
+<th>插件版本</th>
+<th>所需最低Gradle版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>8.8</td>
+<td>8.10.2</td>
+</tr>
+<tr>
+<td>8.7</td>
+<td>8.9</td>
+</tr>
+<tr>
+<td>8.6</td>
+<td>8.7</td>
+</tr>
+<tr>
+<td>8.5</td>
+<td>8.7</td>
+</tr>
+<tr>
+<td>8.4</td>
+<td>8.6</td>
+</tr>
+<tr>
+<td>8.3</td>
+<td>8.4</td>
+</tr>
+<tr>
+<td>8.2</td>
+<td>8.2</td>
+</tr>
+<tr>
+<td>8.1</td>
+<td>8.0</td>
+</tr>
+<tr>
+<td>8.0</td>
+<td>8.0</td>
+</tr>
+<tr>
+<td>7.4</td>
+<td>7.5</td>
+</tr>
+<tr>
+<td>7.3</td>
+<td>7.4</td>
+</tr>
+<tr>
+<td>7.2</td>
+<td>7.3.3</td>
+</tr>
+<tr>
+<td>7.1</td>
+<td>7.2</td>
+</tr>
+<tr>
+<td>7.0</td>
+<td>7.0</td>
+</tr>
+<tr>
+<td>4.2.0+</td>
+<td>6.7.1</td>
+</tr>
+<tr>
+<td>4.1.0+</td>
+<td>6.5+</td>
+</tr>
+<tr>
+<td>4.0.0+</td>
+<td>6.1.1+</td>
+</tr>
+<tr>
+<td>3.6.0 - 3.6.4</td>
+<td>5.6.4+</td>
+</tr>
+<tr>
+<td>3.5.0 - 3.5.4</td>
+<td>5.4.1+</td>
+</tr>
+<tr>
+<td>3.4.0 - 3.4.3</td>
+<td>5.1.1+</td>
+</tr>
+<tr>
+<td>…</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="Android-Gradle-插件和-Android-Studio-兼容性"><a href="#Android-Gradle-插件和-Android-Studio-兼容性" class="headerlink" title="Android Gradle 插件和 Android Studio 兼容性"></a>Android Gradle 插件和 Android Studio 兼容性</h3><p>Android Studio 构建系统以 Gradle 为基础，并且 Android Gradle 插件 (AGP) 添加了几项专用于构建 Android 应用的功能。下表列出了各个 Android Studio 版本所需的 AGP 版本。</p>
+<table>
+<thead>
+<tr>
+<th>Android Studio 版本</th>
+<th>所需的 AGP 版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ladybug 功能更新 | 2024.2.2</td>
+<td>3.2-8.8</td>
+</tr>
+<tr>
+<td>Ladybug | 2024.2.1</td>
+<td>3.2-8.7</td>
+</tr>
+<tr>
+<td>Koala 功能更新 | 2024.1.2</td>
+<td>3.2-8.6</td>
+</tr>
+<tr>
+<td>Koala | 2024.1.1</td>
+<td>3.2-8.5</td>
+</tr>
+<tr>
+<td>Jellyfish | 2023.3.1</td>
+<td>3.2-8.4</td>
+</tr>
+<tr>
+<td>Iguana | 2023.2.1</td>
+<td>3.2-8.3</td>
+</tr>
+<tr>
+<td>Hedgehog | 2023.1.1</td>
+<td>3.2-8.2</td>
+</tr>
+<tr>
+<td>Giraffe | 2022.3.1</td>
+<td>3.2-8.1</td>
+</tr>
+<tr>
+<td>Flamingo | 2022.2.1</td>
+<td>3.2-8.0</td>
+</tr>
+</tbody></table>
+<h3 id="特定-Android-API-级别所要求的最低工具版本"><a href="#特定-Android-API-级别所要求的最低工具版本" class="headerlink" title="特定 Android API 级别所要求的最低工具版本"></a>特定 Android API 级别所要求的最低工具版本</h3><p>Android Studio 和 AGP 需要满足最低版本要求才能支持特定 API 级别。</p>
+<table>
+<thead>
+<tr>
+<th>API 级别</th>
+<th>最低 Android Studio 版本</th>
+<th>最低 AGP 版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Baklava 预览</td>
+<td>Meerkat | 2024.3.1</td>
+<td>8.9.0</td>
+</tr>
+<tr>
+<td>35</td>
+<td>Koala 功能更新 | 2024.2.1</td>
+<td>8.6.0</td>
+</tr>
+<tr>
+<td>34</td>
+<td>Hedgehog | 2023.1.1</td>
+<td>8.1.1</td>
+</tr>
+<tr>
+<td>33</td>
+<td>Flamingo | 2022.2.1</td>
+<td>7.2</td>
+</tr>
+</tbody></table>
+<h3 id="JDK版本与gradle版本对应关系"><a href="#JDK版本与gradle版本对应关系" class="headerlink" title="JDK版本与gradle版本对应关系"></a>JDK版本与gradle版本对应关系</h3><table>
+<thead>
+<tr>
+<th>Java版本</th>
+<th>第一个支持的Gradle版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>18</td>
+<td>7.5</td>
+</tr>
+<tr>
+<td>17</td>
+<td>7.3</td>
+</tr>
+<tr>
+<td>16</td>
+<td>7.0</td>
+</tr>
+<tr>
+<td>15</td>
+<td>6.7</td>
+</tr>
+<tr>
+<td>14</td>
+<td>6.3</td>
+</tr>
+<tr>
+<td>13</td>
+<td>6.0</td>
+</tr>
+<tr>
+<td>12</td>
+<td>5.4</td>
+</tr>
+<tr>
+<td>11</td>
+<td>5.0</td>
+</tr>
+<tr>
+<td>10</td>
+<td>4.7</td>
+</tr>
+<tr>
+<td>9</td>
+<td>4.3</td>
+</tr>
+<tr>
+<td>8</td>
+<td>2.1</td>
+</tr>
+</tbody></table>
 
     <div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-9d96e2bb" role="button" aria-expanded="false" aria-controls="collapse-9d96e2bb">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-4d32595a" role="button" aria-expanded="false" aria-controls="collapse-4d32595a">
         <div class="fold-arrow">▶</div>文章封面
       </div>
-      <div class="fold-collapse collapse" id="collapse-9d96e2bb">
+      <div class="fold-collapse collapse" id="collapse-4d32595a">
         <div class="fold-content">
-          <p><img src="/img/first.png" srcset="/img/loading.gif" lazyload></p>
+          <p><img src="https://cdn.yueyc.top/img/20250303174155656.png" srcset="/img/loading.gif" lazyload></p>
         </div>
       </div>
     </div>
@@ -322,13 +559,36 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Android%E7%8E%AF%E5%A2%83/" class="category-chain-item">Android环境</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%BF%83%E6%83%85/" class="print-no-link">#心情</a>
+        <a href="/tags/Android/" class="print-no-link">#Android</a>
       
-        <a href="/tags/flag/" class="print-no-link">#flag</a>
+        <a href="/tags/Gradle/" class="print-no-link">#Gradle</a>
+      
+        <a href="/tags/flutter/" class="print-no-link">#flutter</a>
       
     </div>
   
@@ -340,8 +600,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>第一篇博客---懂人情，知冷暖。</div>
-      <div>https://yueyc.top/2025/02/27/first-blog/</div>
+      <div>gradle与AGP的关系</div>
+      <div>https://yueyc.top/2025/03/03/gradle/</div>
     </div>
     <div class="license-meta">
       
@@ -353,7 +613,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年2月27日</div>
+          <div>2025年3月3日</div>
         </div>
       
       
@@ -391,15 +651,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/02/27/learnJS/" title="JS基础知识学习笔记">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">JS基础知识学习笔记</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2025/03/01/price/" title="电费水费燃气费暖气费物业费">
+                        <span class="hidden-mobile">电费水费燃气费暖气费物业费</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
