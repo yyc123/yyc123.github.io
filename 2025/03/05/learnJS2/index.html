@@ -21,28 +21,26 @@
   <meta name="author" content="yueyc">
   <meta name="keywords" content="">
   
-    <meta name="description" content="flutter旧项目升级Gradle版本今天运行一个flutter旧版本(2.8.1)项目,报错跑不起来:exception in phase ‘semantic analysis‘ in source unit ‘_BuildScript_‘ Unsupported class file major version 61    意思是说,开发工具的java版本太高了,而项目配置的Gradle版本">
+    <meta name="description" content="offset系列相关属性 offsetParent offsetLeft offsetTop offsetWidth offsetHeight  offset指偏移量，offset系列属性都是相对于父级元素的,可动态获取元素位置。offsetParent是一个对象，是当前元素的父级元素。如果父级元素没有css定位，则为body。如果父级元素有css定位(position为absolute&amp;#x2F">
 <meta property="og:type" content="article">
-<meta property="og:title" content="gradle与AGP的关系">
-<meta property="og:url" content="https://yueyc.top/2025/03/03/gradle/index.html">
+<meta property="og:title" content="JS中的offset,client,scroll系列相关属性">
+<meta property="og:url" content="https://yueyc.top/2025/03/05/learnJS2/index.html">
 <meta property="og:site_name" content="淡然处之的博客">
-<meta property="og:description" content="flutter旧项目升级Gradle版本今天运行一个flutter旧版本(2.8.1)项目,报错跑不起来:exception in phase ‘semantic analysis‘ in source unit ‘_BuildScript_‘ Unsupported class file major version 61    意思是说,开发工具的java版本太高了,而项目配置的Gradle版本">
+<meta property="og:description" content="offset系列相关属性 offsetParent offsetLeft offsetTop offsetWidth offsetHeight  offset指偏移量，offset系列属性都是相对于父级元素的,可动态获取元素位置。offsetParent是一个对象，是当前元素的父级元素。如果父级元素没有css定位，则为body。如果父级元素有css定位(position为absolute&amp;#x2F">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.yueyc.top/img/20250303174155656.png">
-<meta property="article:published_time" content="2025-03-03T02:19:00.000Z">
-<meta property="article:modified_time" content="2025-03-03T11:46:44.170Z">
+<meta property="og:image" content="https://yueyc.top/img/learnJS.png">
+<meta property="article:published_time" content="2025-03-05T13:12:43.000Z">
+<meta property="article:modified_time" content="2025-03-13T07:29:32.475Z">
 <meta property="article:author" content="yueyc">
-<meta property="article:tag" content="Android">
-<meta property="article:tag" content="Gradle">
-<meta property="article:tag" content="flutter">
+<meta property="article:tag" content="JS">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.yueyc.top/img/20250303174155656.png">
+<meta name="twitter:image" content="https://yueyc.top/img/learnJS.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>gradle与AGP的关系 - 淡然处之的博客</title>
+  <title>JS中的offset,client,scroll系列相关属性 - 淡然处之的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,13 +200,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://cdn.yueyc.top/img/20250303174155656.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/learnJS.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="gradle与AGP的关系"></span>
+            <span id="subtitle" data-typed-text="JS中的offset,client,scroll系列相关属性"></span>
           
         </div>
 
@@ -219,8 +217,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-03-03 10:19" pubdate>
-          2025年3月3日 上午
+        <time datetime="2025-03-05 21:12" pubdate>
+          2025年3月5日 晚上
         </time>
       </span>
     
@@ -231,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          884 字
+          738 字
         
       </span>
     
@@ -242,7 +240,7 @@
         
         
         
-          8 分钟
+          7 分钟
         
       </span>
     
@@ -288,272 +286,59 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">gradle与AGP的关系</h1>
+            <h1 id="seo-header">JS中的offset,client,scroll系列相关属性</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="flutter旧项目升级Gradle版本"><a href="#flutter旧项目升级Gradle版本" class="headerlink" title="flutter旧项目升级Gradle版本"></a>flutter旧项目升级Gradle版本</h3><p>今天运行一个flutter旧版本(2.8.1)项目,报错跑不起来:<br><code>exception in phase ‘semantic analysis‘ in source unit ‘_BuildScript_‘ Unsupported class file major version 61</code>  </p>
-<p><img src="https://cdn.yueyc.top/img/20250303184653437.png" srcset="/img/loading.gif" lazyload></p>
-<p>意思是说,开发工具的java版本太高了,而项目配置的Gradle版本(这里是6.7)不支持这个Java版本.<br>查看本机配置的java版本:</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs applescript">java -<span class="hljs-built_in">version</span><br></code></pre></td></tr></table></figure>
-<p>输出:</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">openjdk</span> version <span class="hljs-string">&quot;17.0.10&quot;</span> <span class="hljs-number">2024</span>-<span class="hljs-number">01</span>-<span class="hljs-number">16</span><br><span class="hljs-attribute">OpenJDK</span> Runtime Environment (build <span class="hljs-number">17</span>.<span class="hljs-number">0</span>.<span class="hljs-number">10</span>+<span class="hljs-number">0</span>-<span class="hljs-number">17</span>.<span class="hljs-number">0</span>.<span class="hljs-number">10</span>b1087.<span class="hljs-number">21</span>-<span class="hljs-number">11572160</span>)<br><span class="hljs-attribute">OpenJDK</span> <span class="hljs-number">64</span>-Bit Server VM (build <span class="hljs-number">17</span>.<span class="hljs-number">0</span>.<span class="hljs-number">10</span>+<span class="hljs-number">0</span>-<span class="hljs-number">17</span>.<span class="hljs-number">0</span>.<span class="hljs-number">10</span>b1087.<span class="hljs-number">21</span>-<span class="hljs-number">11572160</span>, mixed mode)<br></code></pre></td></tr></table></figure>
-<p>发现Java版本是17,而Gradle6.7要求Java版本是11以下,所以要么<strong>Gradle版本升级</strong>,要么<strong>降低Java版本</strong>到11.<br>这里选择升级Gradle版本到7.3.3,在android&#x2F;gradle&#x2F;wrapper&#x2F;gradle-wrapper.properties文件中找到distributionUrl这一行，修改:</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">distributionUrl</span>=https\://services.gradle.org/distributions/gradle-<span class="hljs-number">7</span>.<span class="hljs-number">3</span>.<span class="hljs-number">3</span>-<span class="hljs-literal">all</span>.zip<br></code></pre></td></tr></table></figure>
-<p>同时修改在android&#x2F;build.gradle文件中的gradleVersion为7.2.0:</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs gradle"><span class="hljs-keyword">buildscript</span> &#123;<br>    ext.kotlin_version = <span class="hljs-string">&#x27;1.5.31&#x27;</span><br>    <span class="hljs-keyword">repositories</span> &#123;<br>        google()<br>        jcenter()<br>    &#125;<br>    <span class="hljs-keyword">dependencies</span> &#123;<br>        <span class="hljs-keyword">classpath</span> <span class="hljs-string">&#x27;com.android.tools.build:gradle:7.2.0&#x27;</span><br>        <span class="hljs-keyword">classpath</span> <span class="hljs-string">&quot;org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version&quot;</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<hr>
-<p>注意两者路径不要搞混:  </p>
-<ul>
-<li>Gradle配置路径:<strong>android&#x2F;gradle&#x2F;wrapper&#x2F;gradle-wrapper.properties</strong>  </li>
-<li>Gradle插件配置路径:<strong>android&#x2F;build.gradle</strong></li>
+                <h3 id="offset系列相关属性"><a href="#offset系列相关属性" class="headerlink" title="offset系列相关属性"></a>offset系列相关属性</h3><ul>
+<li>offsetParent</li>
+<li>offsetLeft</li>
+<li>offsetTop</li>
+<li>offsetWidth</li>
+<li>offsetHeight</li>
 </ul>
-<hr>
-<p>修改完之后:<br><img src="https://cdn.yueyc.top/img/20250303173408361.png" srcset="/img/loading.gif" lazyload>  </p>
-<p>运行,新的报错:<code>The option &#39;android.jetifier.blacklist&#39; is deprecated.   </code>  </p>
-<p><img src="https://cdn.yueyc.top/img/20250303173531697.png" srcset="/img/loading.gif" lazyload>  </p>
-<p>解决办法:<br><img src="https://cdn.yueyc.top/img/20250303173725271.png" srcset="/img/loading.gif" lazyload><br>最后,修改compileSdkVersion和targetSdkVersion版本为<strong>32</strong></p>
-<h3 id="compileSdkVersion和targetSdkVersion区别"><a href="#compileSdkVersion和targetSdkVersion区别" class="headerlink" title="compileSdkVersion和targetSdkVersion区别:"></a>compileSdkVersion和targetSdkVersion区别:</h3><ul>
-<li>compileSdkVersion:编译SDK版本,编译时使用的SDK版本,一般情况下,编译时使用的SDK版本应当和targetSdkVersion保持一致.</li>
-<li>targetSdkVersion:目标SDK版本,运行时使用的SDK版本,一般情况下,应当选择最新的SDK版本,以获得最新的特性和安全更新.</li>
+<p>offset指偏移量，offset系列属性都是相对于父级元素的,可动态获取元素位置。<br><code>offsetParent</code>是一个对象，是当前元素的父级元素。如果父级元素没有css定位，则为<code>body</code>。<br>如果父级元素有css定位(position为absolute&#x2F;relative&#x2F;fixed)，则为最近的有定位的父级元素。  </p>
+<p><code>offsetleft</code>指当前元素距离父级元素的左偏移量。<br><code>offsetLeft</code>指当前元素距离父级元素的上偏移量。<br><code>offsetWidth</code>指当前元素的宽度。包括自身 padding,border。<br><code>offsetHeight</code>指当前元素的高度。包括自身 padding,border。<br>offset系列获得的数值是没有单位的,且为只读属性，不能赋值。<br>对比<code>style.width</code>获得的是带单位(px)的字符串,<code>style.width</code>是可读写属性,不包含padding和border。<br>用offset属性获取值,用style设置值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">div.<span class="hljs-property">style</span>.<span class="hljs-property">left</span> = <span class="hljs-string">&quot;100px&quot;</span>;<br></code></pre></td></tr></table></figure>
+
+<h3 id="案例-计算鼠标在盒子内的坐标"><a href="#案例-计算鼠标在盒子内的坐标" class="headerlink" title="案例 计算鼠标在盒子内的坐标"></a>案例 计算鼠标在盒子内的坐标</h3><p><img src="https://cdn.yueyc.top/img/offsetTop.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-comment">// 我们在盒子内点击， 想要得到鼠标距离盒子左右的距离。</span></span><br><span class="language-javascript">    <span class="hljs-comment">// 首先得到鼠标在页面中的坐标（ e.pageX, e.pageY）</span></span><br><span class="language-javascript">    <span class="hljs-comment">// 其次得到盒子在页面中的距离(box.offsetLeft, box.offsetTop)</span></span><br><span class="language-javascript">    <span class="hljs-comment">// 用鼠标距离页面的坐标减去盒子在页面中的距离， 得到 鼠标在盒子内的坐标</span></span><br><span class="language-javascript">    <span class="hljs-keyword">const</span> box = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;.box&#x27;</span>);</span><br><span class="language-javascript">    box.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;mousemove&#x27;</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) &#123;</span><br><span class="language-javascript">      <span class="hljs-comment">// console.log(e.pageX);</span></span><br><span class="language-javascript">      <span class="hljs-comment">// console.log(e.pageY);</span></span><br><span class="language-javascript">      <span class="hljs-comment">// console.log(box.offsetLeft);</span></span><br><span class="language-javascript">      <span class="hljs-keyword">const</span> x = e.<span class="hljs-property">pageX</span> - <span class="hljs-variable language_">this</span>.<span class="hljs-property">offsetLeft</span>;</span><br><span class="language-javascript">      <span class="hljs-keyword">const</span> y = e.<span class="hljs-property">pageY</span> - <span class="hljs-variable language_">this</span>.<span class="hljs-property">offsetTop</span>;</span><br><span class="language-javascript">      <span class="hljs-variable language_">this</span>.<span class="hljs-property">innerHTML</span> = <span class="hljs-string">&#x27;x坐标是&#x27;</span> + x + <span class="hljs-string">&#x27; y坐标是&#x27;</span> + y;</span><br><span class="language-javascript">    &#125;)</span><br><span class="language-javascript">  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="client系列相关属性"><a href="#client系列相关属性" class="headerlink" title="client系列相关属性"></a>client系列相关属性</h3><ul>
+<li>clientLeft</li>
+<li>clientTop</li>
+<li>clientWidth</li>
+<li>clientHeight</li>
 </ul>
-<h3 id="什么是Gradle"><a href="#什么是Gradle" class="headerlink" title="什么是Gradle?"></a>什么是Gradle?</h3><p>Gradle是一个自动化构建工具，它可以自动执行各种任务，例如编译，测试，打包，发布，依赖管理等。Gradle基于Groovy语言，支持多种语言，包括Java，Groovy，Kotlin，Scala等。  </p>
-<p>在使用 Gradle 时，通常需要使用 Java Development Kit (JDK) 来编译、运行和测试你的项目。  </p>
-<h3 id="什么是Android-Gradle-Plugin-AGP"><a href="#什么是Android-Gradle-Plugin-AGP" class="headerlink" title="什么是Android Gradle Plugin (AGP)?"></a>什么是Android Gradle Plugin (AGP)?</h3><p>Android Gradle Plugin (AGP) 是 Gradle 的一部分，它是 Android 项目的构建系统，负责编译，打包，测试，签名和发布 Android 应用。AGP 基于 Gradle，并提供一系列插件来支持 Android 开发。  </p>
-<p>不做安卓原生开发,不了解这些配置的对应关系,通过搜索,查看官网(<a target="_blank" rel="noopener" href="https://developer.android.com/build/releases/gradle-plugin?hl=zh-cn">https://developer.android.com/build/releases/gradle-plugin?hl=zh-cn</a>),找到如下对应关系:</p>
-<table>
-<thead>
-<tr>
-<th>插件版本</th>
-<th>所需最低Gradle版本</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>8.8</td>
-<td>8.10.2</td>
-</tr>
-<tr>
-<td>8.7</td>
-<td>8.9</td>
-</tr>
-<tr>
-<td>8.6</td>
-<td>8.7</td>
-</tr>
-<tr>
-<td>8.5</td>
-<td>8.7</td>
-</tr>
-<tr>
-<td>8.4</td>
-<td>8.6</td>
-</tr>
-<tr>
-<td>8.3</td>
-<td>8.4</td>
-</tr>
-<tr>
-<td>8.2</td>
-<td>8.2</td>
-</tr>
-<tr>
-<td>8.1</td>
-<td>8.0</td>
-</tr>
-<tr>
-<td>8.0</td>
-<td>8.0</td>
-</tr>
-<tr>
-<td>7.4</td>
-<td>7.5</td>
-</tr>
-<tr>
-<td>7.3</td>
-<td>7.4</td>
-</tr>
-<tr>
-<td>7.2</td>
-<td>7.3.3</td>
-</tr>
-<tr>
-<td>7.1</td>
-<td>7.2</td>
-</tr>
-<tr>
-<td>7.0</td>
-<td>7.0</td>
-</tr>
-<tr>
-<td>4.2.0+</td>
-<td>6.7.1</td>
-</tr>
-<tr>
-<td>4.1.0+</td>
-<td>6.5+</td>
-</tr>
-<tr>
-<td>4.0.0+</td>
-<td>6.1.1+</td>
-</tr>
-<tr>
-<td>3.6.0 - 3.6.4</td>
-<td>5.6.4+</td>
-</tr>
-<tr>
-<td>3.5.0 - 3.5.4</td>
-<td>5.4.1+</td>
-</tr>
-<tr>
-<td>3.4.0 - 3.4.3</td>
-<td>5.1.1+</td>
-</tr>
-<tr>
-<td>…</td>
-<td></td>
-</tr>
-</tbody></table>
-<h3 id="Android-Gradle-插件和-Android-Studio-兼容性"><a href="#Android-Gradle-插件和-Android-Studio-兼容性" class="headerlink" title="Android Gradle 插件和 Android Studio 兼容性"></a>Android Gradle 插件和 Android Studio 兼容性</h3><p>Android Studio 构建系统以 Gradle 为基础，并且 Android Gradle 插件 (AGP) 添加了几项专用于构建 Android 应用的功能。下表列出了各个 Android Studio 版本所需的 AGP 版本。</p>
-<table>
-<thead>
-<tr>
-<th>Android Studio 版本</th>
-<th>所需的 AGP 版本</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Ladybug 功能更新 | 2024.2.2</td>
-<td>3.2-8.8</td>
-</tr>
-<tr>
-<td>Ladybug | 2024.2.1</td>
-<td>3.2-8.7</td>
-</tr>
-<tr>
-<td>Koala 功能更新 | 2024.1.2</td>
-<td>3.2-8.6</td>
-</tr>
-<tr>
-<td>Koala | 2024.1.1</td>
-<td>3.2-8.5</td>
-</tr>
-<tr>
-<td>Jellyfish | 2023.3.1</td>
-<td>3.2-8.4</td>
-</tr>
-<tr>
-<td>Iguana | 2023.2.1</td>
-<td>3.2-8.3</td>
-</tr>
-<tr>
-<td>Hedgehog | 2023.1.1</td>
-<td>3.2-8.2</td>
-</tr>
-<tr>
-<td>Giraffe | 2022.3.1</td>
-<td>3.2-8.1</td>
-</tr>
-<tr>
-<td>Flamingo | 2022.2.1</td>
-<td>3.2-8.0</td>
-</tr>
-</tbody></table>
-<h3 id="特定-Android-API-级别所要求的最低工具版本"><a href="#特定-Android-API-级别所要求的最低工具版本" class="headerlink" title="特定 Android API 级别所要求的最低工具版本"></a>特定 Android API 级别所要求的最低工具版本</h3><p>Android Studio 和 AGP 需要满足最低版本要求才能支持特定 API 级别。</p>
-<table>
-<thead>
-<tr>
-<th>API 级别</th>
-<th>最低 Android Studio 版本</th>
-<th>最低 AGP 版本</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Baklava 预览</td>
-<td>Meerkat | 2024.3.1</td>
-<td>8.9.0</td>
-</tr>
-<tr>
-<td>35</td>
-<td>Koala 功能更新 | 2024.2.1</td>
-<td>8.6.0</td>
-</tr>
-<tr>
-<td>34</td>
-<td>Hedgehog | 2023.1.1</td>
-<td>8.1.1</td>
-</tr>
-<tr>
-<td>33</td>
-<td>Flamingo | 2022.2.1</td>
-<td>7.2</td>
-</tr>
-</tbody></table>
-<h3 id="JDK版本与gradle版本对应关系"><a href="#JDK版本与gradle版本对应关系" class="headerlink" title="JDK版本与gradle版本对应关系"></a>JDK版本与gradle版本对应关系</h3><table>
-<thead>
-<tr>
-<th>Java版本</th>
-<th>第一个支持的Gradle版本</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>18</td>
-<td>7.5</td>
-</tr>
-<tr>
-<td>17</td>
-<td>7.3</td>
-</tr>
-<tr>
-<td>16</td>
-<td>7.0</td>
-</tr>
-<tr>
-<td>15</td>
-<td>6.7</td>
-</tr>
-<tr>
-<td>14</td>
-<td>6.3</td>
-</tr>
-<tr>
-<td>13</td>
-<td>6.0</td>
-</tr>
-<tr>
-<td>12</td>
-<td>5.4</td>
-</tr>
-<tr>
-<td>11</td>
-<td>5.0</td>
-</tr>
-<tr>
-<td>10</td>
-<td>4.7</td>
-</tr>
-<tr>
-<td>9</td>
-<td>4.3</td>
-</tr>
-<tr>
-<td>8</td>
-<td>2.1</td>
-</tr>
-</tbody></table>
+<p>client指的是元素本身的可视内容,不包括边框和滚动条。<br><code>clientLeft</code>指当前元素的左边框宽度。<br><code>clientTop</code>指当前元素的上边框宽度。<br><code>clientWidth</code>指当前元素的可视宽度,包括自身padding,不含边框。<br><code>clientHeight</code>指当前元素的可视高度,包括自身padding,不含边框。<br>client系列获取的内容也不含单位。</p>
+<h4 id="clientWidth-clientHeight与offsetWidth-offsetHeight都是只读属性-区别"><a href="#clientWidth-clientHeight与offsetWidth-offsetHeight都是只读属性-区别" class="headerlink" title="clientWidth,clientHeight与offsetWidth,offsetHeight都是只读属性,区别:"></a><code>clientWidth</code>,<code>clientHeight</code>与<code>offsetWidth</code>,<code>offsetHeight</code>都是只读属性,区别:</h4><p><code>clientWidth</code>,<code>clientHeight</code>获取的宽高为padding + 内容区<br><code>offsetWidth</code>,<code>offsetHeight</code>获取的宽高为padding + 内容区 + <strong>边框</strong></p>
+<h3 id="scroll系列相关属性"><a href="#scroll系列相关属性" class="headerlink" title="scroll系列相关属性"></a>scroll系列相关属性</h3><ul>
+<li>scrollLeft</li>
+<li>scrollTop</li>
+<li>scrollWidth</li>
+<li>scrollHeight</li>
+</ul>
+<p>当我们用鼠标滚轮，滚动网页的时候，会触发 window.onscroll() 方法。<br><code>scrollLeft</code>获取水平滚动条滚动的距离。<br><code>scrollTop</code>获取垂直滚动条滚动的距离。<br><code>scrollWidth</code>指当前滚动元素的实际宽度,包括 padding,不含 border。<br><code>scrollHeight</code>指当前滚动元素实际高度,包括 padding,不含 border。</p>
+<p>当某个元素满足<code>scrollHeight - scrollTop == clientHeight</code>时，说明垂直滚动条滚动到底了。<br>当某个元素满足<code>scrollWidth - scrollLeft == clientWidth</code>时，说明水平滚动条滚动到底了。</p>
+<h3 id="相关联"><a href="#相关联" class="headerlink" title="相关联"></a>相关联</h3><ul>
+<li><code>window.onscroll</code> 屏幕滚动</li>
+<li><code>window.onresize</code> 屏幕窗口尺寸改变</li>
+<li><code>window.onload</code> 页面加载完毕<br>屏幕分辨率:</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-variable language_">window</span>.<span class="hljs-property">screen</span>.<span class="hljs-property">width</span><br><span class="hljs-variable language_">window</span>.<span class="hljs-property">screen</span>.<span class="hljs-property">height</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-variable language_">window</span>.<span class="hljs-property">onresize</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-variable language_">document</span>.<span class="hljs-property">title</span> = <span class="hljs-variable language_">window</span>.<span class="hljs-property">screen</span>.<span class="hljs-property">width</span> + <span class="hljs-string">&quot;    &quot;</span> + <span class="hljs-variable language_">window</span>.<span class="hljs-property">screen</span>.<span class="hljs-property">height</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
     <div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-4d32595a" role="button" aria-expanded="false" aria-controls="collapse-4d32595a">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-4101fe7f" role="button" aria-expanded="false" aria-controls="collapse-4101fe7f">
         <div class="fold-arrow">▶</div>文章封面
       </div>
-      <div class="fold-collapse collapse" id="collapse-4d32595a">
+      <div class="fold-collapse collapse" id="collapse-4101fe7f">
         <div class="fold-content">
-          <p><img src="https://cdn.yueyc.top/img/20250303174155656.png" srcset="/img/loading.gif" lazyload></p>
+          <p><img src="/img/learnJS.png" srcset="/img/loading.gif" lazyload></p>
         </div>
       </div>
     </div>
-
-
                 
               </div>
             
@@ -561,36 +346,11 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Android%E7%8E%AF%E5%A2%83/" class="category-chain-item">Android环境</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Android/" class="print-no-link">#Android</a>
-      
-        <a href="/tags/Gradle/" class="print-no-link">#Gradle</a>
-      
-        <a href="/tags/flutter/" class="print-no-link">#flutter</a>
+        <a href="/tags/JS/" class="print-no-link">#JS</a>
       
     </div>
   
@@ -602,8 +362,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>gradle与AGP的关系</div>
-      <div>https://yueyc.top/2025/03/03/gradle/</div>
+      <div>JS中的offset,client,scroll系列相关属性</div>
+      <div>https://yueyc.top/2025/03/05/learnJS2/</div>
     </div>
     <div class="license-meta">
       
@@ -615,7 +375,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年3月3日</div>
+          <div>2025年3月5日</div>
         </div>
       
       
@@ -653,9 +413,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/03/05/learnJS2/" title="JS中的offset,client,scroll系列相关属性">
+                      <a href="/2025/03/12/learn-speech/" title="要练习说话,表达">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">JS中的offset,client,scroll系列相关属性</span>
+                        <span class="hidden-mobile">要练习说话,表达</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -663,8 +423,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/03/01/price/" title="电费水费燃气费暖气费物业费">
-                        <span class="hidden-mobile">电费水费燃气费暖气费物业费</span>
+                      <a href="/2025/03/03/gradle/" title="gradle与AGP的关系">
+                        <span class="hidden-mobile">gradle与AGP的关系</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
