@@ -4,6 +4,46 @@
   
   
   <entry>
+    <title>学会 Node.js 就真的全栈了吗？</title>
+    <link href="/2025/03/13/idea/"/>
+    <url>/2025/03/13/idea/</url>
+    
+    <content type="html"><![CDATA[<ul><li>今天看到<a href="https://web.qianguyihao.com/11-Node.js/01-Node.js%E4%BB%8B%E7%BB%8D.html#%E6%9C%80%E5%90%8E%E4%B8%80%E6%AE%B5-%E5%89%8D%E7%AB%AF%E5%90%8C%E5%AD%A6%E4%BC%9A-node-js-%E5%B0%B1%E7%9C%9F%E7%9A%84%E5%85%A8%E6%A0%88%E4%BA%86%E5%90%97">这段话</a>，感触颇深。</li><li>你可以在这一段时间里擅长前端技术，也可以在另一段时间擅长后台技术，但你不可能在同一段时间同时擅长前端和后台，更不可能所有的时间同时擅长两者。</li><li>所谓的全栈，只是一个伪命题，个人不一定需要全栈，企业和项目也不强制要求全栈，分工协作，才最高效。</li><li>全栈只是一种职业生涯的标签，并不是真正意义上的全栈。</li><li>对于个人而言，虽然全栈很难，但是Node.js的出现，让JS语言实现了前后端语法的统一，让JS语言的技术栈更加全面。</li><li>涉及到后台开发相关的技术，无论如何，也绕不开框架设计、开发调试、数据库操作、高并发处理、大规模存储、性能优化、容灾方案、RPC调用、进程管理、操作系统调度、网络安全、系统运维、日常维护，甚至是Linux内核、驱动开发等过硬的知识技能和经验积累。等你亲身经历过这些，才算明白：语言只是一种工具。</li></ul><hr><h3 id="Node-js的特点"><a href="#Node-js的特点" class="headerlink" title="Node.js的特点"></a>Node.js的特点</h3><ul><li>异步,非阻塞IO模型</li><li>事件循环</li><li>单线程</li><li>轻量级</li><li>高性能</li><li>跨平台</li></ul><p>NPM包的版本号，是用三位数表示。版本号前面的符号，代表开发者想要更新的的最新版本条件：</p><ul><li>符号^：固定第一位数。表示主版本固定的情况下，可更新至最新版。例如 vue: “^2.6.0” 表示 2.6.0及其以上的2.x.x 都是满足的。</li><li>符号~：固定前两位数。表示次版本固定的情况下，可更新至最新版。例如 vuex: “~2.6.0”，2.6.0及其以上的2.6.x都是满足的。</li><li>无符号：三位数都固定。无符号表示固定版本号。例如 vue: “2.6.0”，此时一定是安装2.6.0版本。</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ssh">ylsoft@ylsoftdeMac-mini-2 ~ % node -v<br>v20.13.1<br>ylsoft@ylsoftdeMac-mini-2 ~ % npm -v <br>10.5.2<br>ylsoft@ylsoftdeMac-mini-2 ~ % <br></code></pre></td></tr></table></figure>    <div class="fold">      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-97b8d977" role="button" aria-expanded="false" aria-controls="collapse-97b8d977">        <div class="fold-arrow">▶</div>文章封面      </div>      <div class="fold-collapse collapse" id="collapse-97b8d977">        <div class="fold-content">          <p><img src="https://cdn.yueyc.top/img/20250313141011816.png"></p>        </div>      </div>    </div>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>mark</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>要练习说话,表达</title>
+    <link href="/2025/03/12/learn-speech/"/>
+    <url>/2025/03/12/learn-speech/</url>
+    
+    <content type="html"><![CDATA[<p>最近公司部门搞晨会分享，轮到我分享内容的时候，我自己还是会感到紧张，语言总是组织不起来，讲话磕磕巴巴、语无伦次。  </p><p>我觉得我是那种与人正常对话交流还好，但是让我一个人独自发言，无论什么场合，人多人少，我总会遇到脑子一片空白的景象，不知道说什么好。我自认为我是一个逻辑思维能力还算不错的人，但是干程序员这么长时间了，大部分时间都是独自面对电脑，很少面对真实的人、观众，所以我的说话表达能力应该是退缩了。  </p><p>前几天还买了周鸿祎的一本书《想赢就要敢上场》，本来是抱着提升认知、提升公开表达能力的意图去读，但说实话，我觉得这本书没啥营养价值。好多凑数的页码，简短的内容除了空白页和 slogan 页之外，干货不多。读完了并没有让我产生多少思想的碰撞，还没有在抖音上看老周他自己发的短视频收获多。  </p><p>人应该是需要向上社交的，所以我必须要提升自己的表达能力，强迫自己读书，多说话，多交流。  </p><p>但是该利用什么办法呢？搞视频自媒体，我是没有勇气的。😄  </p><p>复盘了一下自己，这些年日常的交际时间确实在逐渐下降，大多数时间里都是在家呆着，除了与家人短暂的必要沟通之外，我没有主动与其他人交流过。前些年爱看的综艺节目类也都没看了，除了上班，业余时间基本就打单机游戏与刷短视频中度过了。除了体重在增长，其他方面貌似都在下降。  </p><p>我想，说话表达能力应该跟运动一样，要不断的训练，主动与人沟通，收集生活中的谈资，像跑步一样形成肌肉记忆。突然想到老周书里说的，多储备一些笑话，到需要演讲的场合时，总会派上用场的。无论如何，我都该练习说话、表达了。  </p><ul><li>每周都抽出时间给儿子阅读；</li><li>每次当众讲话前，先有所准备，梳理好语言逻辑，克服紧张；</li><li>多与朋友交流，了解他人观点，提升自己。</li></ul>    <div class="fold">      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-a076df15" role="button" aria-expanded="false" aria-controls="collapse-a076df15">        <div class="fold-arrow">▶</div>文章封面      </div>      <div class="fold-collapse collapse" id="collapse-a076df15">        <div class="fold-content">          <p><img src="https://cdn.yueyc.top/img/20250313140145890.png"></p>        </div>      </div>    </div>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>生活</tag>
+      
+      <tag>经验</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>gradle与AGP的关系</title>
     <link href="/2025/03/03/gradle/"/>
     <url>/2025/03/03/gradle/</url>
