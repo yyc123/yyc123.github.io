@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>博客配置图片防盗链,并配置CDN加速</title>
+    <link href="/2025/03/17/blog-config/"/>
+    <url>/2025/03/17/blog-config/</url>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>之前在七牛云上申请了个存储空间，作为博客的图床使用。本来想着有10G的免费空间还有CDN免费加速的服务，怎么着都够用，毕竟我这小站也不推广，理论上没啥访问量。但周末七牛云竟然给我发了一条短信，说我欠费了，账号处于3天保护期，马上将被冻结，我瞬间就不淡定了，这才刚开始使用，就扣费了？<br><img src="https://cdn.yueyc.top/img/20250317215927244.jpeg"><br>不明白这2分钱到底是怎么得来的，本想问下七牛云客服，但翻了下官网，除了提交工单，没找到在线客服和电话号码。行吧，这样逼我，那我就冲10块玩玩。但是10块钱也是一笔巨款，与零氪的区别可太大了， 我可不能被别的玩家薅羊毛了，我得配置图片防盗链，保护自己的流量。🐶    </p><p>一通折腾，在此处设置了开启防盗链，发现根本不对劲，原来此处设置的是存储空间的防盗链，根本不是我要的东西。<br><img src="https://cdn.yueyc.top/img/20250317220852659.png"><br><strong>正确步骤：</strong><br><img src="https://cdn.yueyc.top/img/20250317224617440.png"><br><img src="https://cdn.yueyc.top/img/20250317224752357.png"><br><img src="https://cdn.yueyc.top/img/20250317224843089.png"></p><p>在此处开启。<br><img src="https://cdn.yueyc.top/img/20250317224819207.png"><br>开启后具体是否生效，用之前访问过的浏览器是无法判定的，因为有缓存，即使已经设置了防盗链和白名单，但是经我不断测试，在有缓存的情况下用其他站点还是能访问到图片资源。因此，最好的做法是换一台浏览器或设备，重新访问。  </p><p>那么换了设备访问后，虽然防盗链是生效了，但新的问题出现了。。因为博客是部署在github pages上的，在不开代理的情况下，访问速度巨慢无比，加载了半天竟然还是转圈圈。这怎么能忍，必须得解决。  </p><p>然后，我就看到了Cloudflare<br>关于 Cloudflare 的介绍，可以简单让AI（豆包）介绍：<br><img src="https://cdn.yueyc.top/img/20250317225052104.png"><br><img src="https://cdn.yueyc.top/img/20250317225115800.png"></p><p>Cloudflare 是有免费版和付费版的，付费版可以开启更多的功能，但是对我的博客来说,免费版足够使用。最主要的是，无需担心流量被盗刷，因为 Cloudflare 自带的 DDoS 防护功能，可以自动识别攻击流量并进行封禁。  </p><p>这个 Cloudflare 使用起来真的是方便快捷，可以直接将github上的站点仓库导入进来，一键部署。<br><img src="https://cdn.yueyc.top/img/20250317225224384.png"></p><p>项目创建完成后，即可从分配的新域名访问博客，测试了下，CDN的加速效果还是很明显的。<br>Cloudflare 还提供免费的 SSL 证书，可以让博客无需再做 HTTPS 证书的配置。  </p><p>接下来在 Cloudflare 上配置自己的域名<br><img src="https://cdn.yueyc.top/img/20250317225332225.png"><br>可以通过CNAME的方式去华为云（域名提供商）平台添加一条 DNS 解析记录，之前已经添加过多次，轻车熟路。  </p><p>最后，就能使用自己的域名快速打开博客了！😊</p>    <div class="fold">      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-1dcdedba" role="button" aria-expanded="false" aria-controls="collapse-1dcdedba">        <div class="fold-arrow">▶</div>文章封面      </div>      <div class="fold-collapse collapse" id="collapse-1dcdedba">        <div class="fold-content">          <p><img src="https://cdn.yueyc.top/img/20250317225446530.png"></p>        </div>      </div>    </div>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>blog</tag>
+      
+      <tag>cdn</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>学会 Node.js 就真的全栈了吗？</title>
     <link href="/2025/03/13/idea/"/>
     <url>/2025/03/13/idea/</url>
