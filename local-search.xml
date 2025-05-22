@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>ios关于P8推送证书配置,与微信登录/分享配置(Unuversal Links)</title>
+    <link href="/2025/05/22/push-cer/"/>
+    <url>/2025/05/22/push-cer/</url>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="ios-关于P8推送证书"><a href="#ios-关于P8推送证书" class="headerlink" title="ios 关于P8推送证书"></a>ios 关于P8推送证书</h2><ul><li>现在设置推送通知除了P12证书外，可以设置P8证书。</li><li>P8证书是苹果提供的一种证书格式，与P12证书不同，它可以直接在苹果开发者网站上生成下载，无需mac电脑。</li><li>P8证书没有过期时间,所以无需担心证书过期引起的不能收到推送通知的问题。</li><li>P8证书无需区分正式环境与测试环境,只需要一个证书即可。<br>经对接阿里云推送消息测试,阿里云的推送服务会自动判定环境,直接运行代码(debug模式)能收到测试环境的推送消息,打包后(release模式)安装到iPhone,能收到生产环境的推送消息。</li></ul><h2 id="对接阿里云推送踩坑记"><a href="#对接阿里云推送踩坑记" class="headerlink" title="对接阿里云推送踩坑记:"></a>对接阿里云推送踩坑记:</h2><ol><li>需要在podfile文件中配置阿里的私有源,不然cocoapods拉不到阿里的相关库：<br><img src="https://cdn.yueyc.top/img/20250521202028082.jpg"></li><li>项目编译报错,找不到aliCloudUtils头文件,解决办法:在podfile中指定AliCloudPush库的版本：<br><img src="https://cdn.yueyc.top/img/20250521202336526.jpg"></li></ol><h2 id="ios-对接微信登录"><a href="#ios-对接微信登录" class="headerlink" title="ios 对接微信登录"></a>ios 对接微信登录</h2><p>因项目是使用flutter开发，所以直接下载相关的flutter插件<a href="https://pub.dev/packages/fluwx">[fluwx]</a>，调用对应的api即可。  </p><p>所需配置：</p><ul><li>得有https开头的域名。</li><li>微信开放平台申请app_id,app_secret,与安卓可以是共用同一套。</li><li>打开苹果开发者网站,查看teamID,以及项目bundle id。</li><li>创建json格式文本文件,命名为<code>apple-app-site-association</code>,无需后缀名。</li><li><code>apple-app-site-association</code>文件配置：</li></ul><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;applinks&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>        <span class="hljs-attr">&quot;apps&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-attr">&quot;details&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>            <span class="hljs-punctuation">&#123;</span><br>                <span class="hljs-attr">&quot;appID&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;teamID.包名&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-attr">&quot;paths&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span> <span class="hljs-string">&quot;*&quot;</span> <span class="hljs-punctuation">]</span><br>            <span class="hljs-punctuation">&#125;</span><br>        <span class="hljs-punctuation">]</span><br>    <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span> <br></code></pre></td></tr></table></figure><p><code>path</code>可以配置能跳转app的路径，例如<code> &quot;paths&quot;: [&quot;*&quot;,&quot;/app/*&quot;]</code>这里配置为<code>*</code>表示所有路径都能跳转app。</p><ul><li>将<code>apple-app-site-association</code>文件上传到服务器,通常放到网站对应的根目录，浏览器打开<code>https://域名地址/apple-app-site-association</code>能正常下载文件。</li><li>将<code>https://域名地址/</code>填入微信开放平台，以及项目中代码api需要传递的<code>universalLink</code>参数。</li><li>xcode需要添加Associated Domains，将<code>applinks:域名地址</code>添加到Associated Domains中。</li><li>配置微信白名单,打开 xcode，在 info.plist 文件中添加<code>LSApplicationQueriesSchemes</code>数组，并添加<code>weixin</code>，<code>weixinULAPI</code>，<code>weixinURLParamsAPI</code>。<br><img src="https://cdn.yueyc.top/img/20250521204103392.png"></li><li>添加 URL Types (微信appid)：<br><img src="https://cdn.yueyc.top/img/20250522110605861.png"></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>iOS</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>iOS</tag>
+      
+      <tag>推送证书</tag>
+      
+      <tag>微信SDK</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>“阳” 后烦恼多，私活难接，A股也坑人</title>
     <link href="/2025/05/15/think-things/"/>
     <url>/2025/05/15/think-things/</url>
